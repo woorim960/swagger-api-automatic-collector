@@ -1,0 +1,24 @@
+/* Variables */
+:root {
+  /* layouts */
+  /* header */
+  --logo-size: 100px;
+  /* banner */
+  --banner-height: 500px;
+  --domain-title-banner-height: 200px;
+  --domain-title-banner-fc: var(--rightest-grey-color);
+
+  /* main colors */
+  --white-color: white;
+  --rightest-grey-color: rgb(246, 246, 246);
+  --black-color: black;
+
+  /* background */
+  --main-bg-padding: 13%;
+  /* background-color */
+  --main-bg-color: white;
+  --main-point-color: rgb(0, 193, 30);
+
+  /* font-size */
+  --domain-title-banner-fs: 100px;
+}
