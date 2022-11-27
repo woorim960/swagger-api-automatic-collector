@@ -3,7 +3,7 @@
     <RouterLink
       class="card shadow-sm link"
       :to="{
-        params: { domainName, domainId },
+        params: { domainName, domainId, repositoryName },
         name: 'DomainDetailView',
       }"
     >
@@ -18,10 +18,8 @@
             <RouterLink
               class="btn btn-sm btn-outline-secondary"
               :to="{
-                // query 설정 어떻게 하는지 모르겠음.
-                path: '/domains/{{ $route.params.domainName }}/{{ $route.params.domainId }}?page={{ $route.query.leftButtonPageName }}',
-                params: { domainName, domainId },
-                query: { leftButtonPageName },
+                params: { domainName, domainId, repositoryName },
+                query: { page: leftButtonPageName },
                 name: 'DomainDetailView',
               }"
               >{{ leftButtonText }}</RouterLink
@@ -30,7 +28,7 @@
             <RouterLink
               class="btn btn-sm btn-outline-secondary"
               :to="{
-                params: { domainName, domainId, rightButtonPageName },
+                params: { domainName, domainId, repositoryName },
                 query: { rightButtonPageName },
                 name: 'DomainView',
               }"
@@ -50,7 +48,7 @@ export default {
   props: {
     domainName: {
       type: String,
-      default: "domainName",
+      default: "empty",
       required: true,
     },
     domainId: {
@@ -58,14 +56,19 @@ export default {
       default: 1,
       required: true,
     },
+    repositoryName: {
+      type: String,
+      default: "empty",
+      required: true,
+    },
     leftButtonPageName: {
       type: String,
-      defulat: "swagger",
+      default: "swagger",
       required: false,
     },
     rightButtonPageName: {
       type: String,
-      defulat: "github",
+      default: "github",
       required: false,
     },
     description: {

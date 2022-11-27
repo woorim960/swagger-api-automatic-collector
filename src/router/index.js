@@ -12,7 +12,7 @@ const routes = [
     component: () => import("../views/domains/DomainView.vue"),
   },
   {
-    path: "/domains/:domainName/:domainId",
+    path: "/domains/:domainName/:domainId/repositories/:repositoryName",
     name: "DomainDetailView",
     component: () => import("../views/domains/DomainDetailView.vue"),
     props: true,

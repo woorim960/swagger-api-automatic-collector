@@ -77,6 +77,7 @@ a {
   color: var(--black-color);
   text-decoration: none;
 }
+
 .logo-img {
   height: 100px;
 }

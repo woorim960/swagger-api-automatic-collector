@@ -1,16 +1,14 @@
 <template>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     <BaseCard
-      domainName="sd"
-      description="hello"
+      v-for="(item, idx) in items"
+      :key="idx"
+      :domainName="item.domainName"
+      :repositoryName="item.repositoryName"
+      :description="item.description"
       leftButtonLink="/left"
       rightButtonLink="/right"
     />
-    <BaseCard />
-    <BaseCard />
-    <BaseCard />
-    <BaseCard />
-    <BaseCard />
   </div>
 </template>
 
@@ -21,6 +19,26 @@ export default {
   name: "HitCardList",
   components: {
     BaseCard,
+  },
+  props: {
+    items: {
+      type: Array,
+      default() {
+        return [
+          {
+            domainName: "sd",
+            repositoryName: "hexsdapi",
+            description: "SD API",
+          },
+          {
+            domainName: "seller",
+            repositoryName: "dot-net",
+            description: "Seller API",
+          },
+        ];
+      },
+      required: true,
+    },
   },
 };
 </script>
